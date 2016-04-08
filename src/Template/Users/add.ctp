@@ -1,8 +1,6 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Games'), ['controller' => 'Games', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Game'), ['controller' => 'Games', 'action' => 'add']) ?></li>
     </ul>
 </nav>
@@ -14,6 +12,10 @@
             echo $this->Form->input('username');
             echo $this->Form->input('email');
             echo $this->Form->input('password');
+            echo $this->Form->input('confirm_password', [
+                'type' => 'password',
+                'required' => true
+            ]);
             echo $this->Form->input('role');
         ?>
     </fieldset>
