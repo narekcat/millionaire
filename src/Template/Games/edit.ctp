@@ -1,4 +1,4 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -13,7 +13,7 @@
         <li><?= $this->Html->link(__('List Game Questions'), ['controller' => 'GameQuestions', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Game Question'), ['controller' => 'GameQuestions', 'action' => 'add']) ?></li>
     </ul>
-</nav>
+</nav> -->
 <div class="games form large-9 medium-8 columns content">
     <?= $this->Form->create($game) ?>
     <fieldset>

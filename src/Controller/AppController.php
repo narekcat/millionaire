@@ -27,7 +27,6 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
-
     /**
      * Initialization hook method.
      *
@@ -72,9 +71,12 @@ class AppController extends Controller
     public function beforeRender(Event $event)
     {
         if (!array_key_exists('_serialize', $this->viewVars) &&
-            in_array($this->response->type(), ['application/json', 'application/xml'])
-        ) {
+            in_array($this->response->type(), ['application/json', 'application/xml'])) {
             $this->set('_serialize', true);
+        }
+        $this->set('isLoggedIn', false);
+        if ($this->Auth->user()) {
+            $this->set('isLoggedIn', true);
         }
     }
 

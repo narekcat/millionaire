@@ -10,7 +10,6 @@ use App\Controller\AppController;
  */
 class QuestionsController extends AppController
 {
-
     /**
      * Index method
      *

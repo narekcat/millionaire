@@ -1,4 +1,4 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Game'), ['action' => 'edit', $game->id]) ?> </li>
@@ -10,7 +10,7 @@
         <li><?= $this->Html->link(__('List Game Questions'), ['controller' => 'GameQuestions', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Game Question'), ['controller' => 'GameQuestions', 'action' => 'add']) ?> </li>
     </ul>
-</nav>
+</nav> -->
 <div class="games view large-9 medium-8 columns content">
     <h3><?= h($game->id) ?></h3>
     <table class="vertical-table">

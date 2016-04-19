@@ -1,11 +1,11 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Question'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Game Questions'), ['controller' => 'GameQuestions', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Game Question'), ['controller' => 'GameQuestions', 'action' => 'add']) ?></li>
     </ul>
-</nav>
+</nav> -->
 <div class="questions index large-9 medium-8 columns content">
     <h3><?= __('Questions') ?></h3>
     <table cellpadding="0" cellspacing="0">

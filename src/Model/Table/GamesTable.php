@@ -15,7 +15,6 @@ use Cake\Validation\Validator;
  */
 class GamesTable extends Table
 {
-
     /**
      * Initialize method
      *

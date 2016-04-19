@@ -15,6 +15,7 @@ class GamesController extends AppController
         parent::initialize();
         // $this->Auth->allow(['index']);
     }
+
     /**
      * Index method
      *
@@ -55,9 +56,12 @@ class GamesController extends AppController
      */
     public function add()
     {
-        $game = $this->Games->newEntity();
+        $game = $this->Games->newEntity(['user_id' => $this->Auth->user('id')]);
         if ($this->request->is('post')) {
-            $game = $this->Games->patchEntity($game, $this->request->data);
+            // $game = $this->Games->patchEntity($game, $this->request->data);
+            $data = $this->request->data;
+            $data['user_id'] = $this->Auth->user('id');
+            $game = $this->Games->newEntity($data);
             if ($this->Games->save($game)) {
                 $this->Flash->success(__('The game has been saved.'));
                 return $this->redirect(['action' => 'index']);

@@ -50,6 +50,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Flash->render() ?>
     <?= $this->Flash->render('auth') ?>
     <div class="container clearfix">
+        <?= $isLoggedIn ? $this->element('navbar') : '' ?>
         <?= $this->fetch('content') ?>
     </div>
     <footer>
