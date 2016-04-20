@@ -18,7 +18,9 @@ class QuestionsController extends AppController
     public function index()
     {
         $questions = $this->paginate($this->Questions);
-
+        $questions->each(function ($question, $key) {
+            $question->answersToString();
+        });
         $this->set(compact('questions'));
         $this->set('_serialize', ['questions']);
     }
@@ -49,7 +51,9 @@ class QuestionsController extends AppController
     {
         $question = $this->Questions->newEntity();
         if ($this->request->is('post')) {
-            $question = $this->Questions->patchEntity($question, $this->request->data);
+            $data = $this->request->data;
+            $data['answers'] = json_encode($data['answers']);
+            $question = $this->Questions->patchEntity($question, $data);
             if ($this->Questions->save($question)) {
                 $this->Flash->success(__('The question has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -103,5 +107,14 @@ class QuestionsController extends AppController
             $this->Flash->error(__('The question could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->params['action'];
+        if (in_array($action, ['index', 'add', 'edit', 'delete'])) {
+            return true;
+        }
+        return parent::isAuthorized($user);
     }
 }

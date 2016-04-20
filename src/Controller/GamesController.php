@@ -126,11 +126,6 @@ class GamesController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function step($stepNumber = 0)
-    {
-        
-    }
-
     public function isAuthorized($user)
     {
         $action = $this->request->params['action'];

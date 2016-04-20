@@ -30,4 +30,9 @@ class Question extends Entity
         '*' => true,
         'id' => false,
     ];
+
+    public function answersToString()
+    {
+        $this->answers = implode(json_decode($this->answers), '; ');
+    }
 }
