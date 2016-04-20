@@ -77,8 +77,12 @@ class QuestionsController extends AppController
         $question = $this->Questions->get($id, [
             'contain' => []
         ]);
+        $question->answersToArray();
+        // debug($question);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $question = $this->Questions->patchEntity($question, $this->request->data);
+            $data = $this->request->data;
+            $data['answers'] = json_encode($data['answers']);
+            $question = $this->Questions->patchEntity($question, $data);
             if ($this->Questions->save($question)) {
                 $this->Flash->success(__('The question has been saved.'));
                 return $this->redirect(['action' => 'index']);

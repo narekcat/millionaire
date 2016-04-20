@@ -35,4 +35,9 @@ class Question extends Entity
     {
         $this->answers = implode(json_decode($this->answers), '; ');
     }
+
+    public function answersToArray()
+    {
+        $this->answers = json_decode($this->answers);
+    }
 }

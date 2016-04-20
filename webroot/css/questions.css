@@ -1,0 +1,24 @@
+#answers {
+    width: 90%;
+    float: left;
+}
+
+label[for = 'right-answer'] {
+    clear: both;
+}
+
+a.add_answer, a.delete_answer {
+    padding: 5px;
+    display: inline-block;
+    background-color: aliceblue;
+    margin: 3px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid gray;
+    line-height: 1em;
+    width: 20px;
+}
+
+div.answer_box {
+    clear: both;
+}

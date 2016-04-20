@@ -10,12 +10,12 @@
 </nav> -->
 <div class="games form large-9 medium-8 columns content">
     <?= $this->Form->create($game) ?>
-    <!-- <fieldset>
+    <fieldset>
         <legend><?= __('Add Game') ?></legend>
         <?php
-            echo $this->Form->input('user_id', ['options' => $users]);
+            echo $this->Form->input('name');
         ?>
-    </fieldset> -->
+    </fieldset>
     <?= $this->Form->button(__('Start Game')) ?>
     <?= $this->Form->end() ?>
 </div>
