@@ -21,6 +21,7 @@ class GamesFixture extends TestFixture
         'user_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
+        'name' => ['type' => 'string', 'length' => 100, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         '_indexes' => [
             'user_key' => ['type' => 'index', 'columns' => ['user_id'], 'length' => []],
         ],
@@ -44,8 +45,9 @@ class GamesFixture extends TestFixture
         [
             'id' => 1,
             'user_id' => 1,
-            'created' => '2016-04-06 10:22:00',
-            'modified' => '2016-04-06 10:22:00'
+            'created' => '2016-04-19 15:32:02',
+            'modified' => '2016-04-19 15:32:02',
+            'name' => 'Lorem ipsum dolor sit amet'
         ],
     ];
 }

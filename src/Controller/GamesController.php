@@ -24,9 +24,16 @@ class GamesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Users'],
+            'limit' => '4',
+            'order' => [
+                'Games.created' => 'asc'
+            ]
         ];
-        $games = $this->paginate($this->Games);
+        $query = $this->Games->find('all')->where([
+            'user_id' => $this->Auth->user('id')
+        ]);
+        $games = $this->paginate($query);
 
         $this->set(compact('games'));
         $this->set('_serialize', ['games']);
@@ -119,10 +126,15 @@ class GamesController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    public function step($stepNumber = 0)
+    {
+        
+    }
+
     public function isAuthorized($user)
     {
         $action = $this->request->params['action'];
-        if (in_array($action, ['index', 'add'])) {
+        if (in_array($action, ['index', 'add', 'edit', 'delete'])) {
             return true;
         }
         if (empty($this->request->params['pass'][0])) {

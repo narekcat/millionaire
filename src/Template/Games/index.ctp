@@ -15,6 +15,7 @@
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('user_id') ?></th>
+                <th><?= $this->Paginator->sort('name') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
                 <th><?= $this->Paginator->sort('modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -25,6 +26,7 @@
             <tr>
                 <td><?= $this->Number->format($game->id) ?></td>
                 <td><?= $game->has('user') ? $this->Html->link($game->user->id, ['controller' => 'Users', 'action' => 'view', $game->user->id]) : '' ?></td>
+                <td><?= $game->name ?></td>
                 <td><?= h($game->created) ?></td>
                 <td><?= h($game->modified) ?></td>
                 <td class="actions">

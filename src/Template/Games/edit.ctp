@@ -18,9 +18,8 @@
     <?= $this->Form->create($game) ?>
     <fieldset>
         <legend><?= __('Edit Game') ?></legend>
-        <?php
-            echo $this->Form->input('user_id', ['options' => $users]);
-        ?>
+        <?= $this->Form->input('user_id', ['type' => 'hidden', 'value' => $game->user_id]) ?>
+        <?= $this->Form->input('name') ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

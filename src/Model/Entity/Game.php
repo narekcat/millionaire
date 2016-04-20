@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\User $user
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
+ * @property string $name
  * @property \App\Model\Entity\GameQuestion[] $game_questions
  */
 class Game extends Entity

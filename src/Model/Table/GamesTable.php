@@ -15,6 +15,7 @@ use Cake\Validation\Validator;
  */
 class GamesTable extends Table
 {
+
     /**
      * Initialize method
      *
@@ -51,6 +52,10 @@ class GamesTable extends Table
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
+
+        $validator
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         return $validator;
     }
